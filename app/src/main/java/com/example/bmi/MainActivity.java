@@ -5,6 +5,7 @@ import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,13 +22,13 @@ public class MainActivity extends AppCompatActivity {
     Button b;
     LinearLayout male;
     LinearLayout female;
-    String gen;
+    public static String gen="i";
     TextView t1,t2;
     SeekBar seekbar;
     TextView heightv;
-    int ch=170;
-    int weight=55;
-    int age=18;
+    public static int ch=170;
+    public static int weight=55;
+    public static int age=18;
     TextView weight1,age1;
     ImageView weightinc,weightdec,ageinc,agedec;
     @Override
@@ -55,10 +56,25 @@ public class MainActivity extends AppCompatActivity {
 //                t2.setTextColor(R.color.white);
                 male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mfh));
                 female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.bg));
-                t1.setTextColor(R.color.black);
+                t1.setTextColor(Color.parseColor("#000000"));
+                t2.setTextColor(Color.parseColor("#c2c2a3"));
 
                 gen="male";
+                male.setOnClickListener(new View.OnClickListener() {
+                    @SuppressLint("ResourceAsColor")
+                    @Override
+                    public void onClick(View view) {
+//                t2.setTextColor(R.color.white);
+                        male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mf));
+                        female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mf));
 
+                        t2.setTextColor(Color.parseColor("#c2c2a3"));
+                        t1.setTextColor(Color.parseColor("#c2c2a3"));
+
+                        gen="i";
+
+                    }
+                });
             }
         });
 
@@ -70,12 +86,28 @@ public class MainActivity extends AppCompatActivity {
                 female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mfh));
                 male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.bg));
                 gen="female";
-                t2.setTextColor(R.color.black);
+                t2.setTextColor(Color.parseColor("#000000"));
+                t1.setTextColor(Color.parseColor("#c2c2a3"));
+                female.setOnClickListener(new View.OnClickListener() {
+                    @SuppressLint("ResourceAsColor")
+                    @Override
+                    public void onClick(View view) {
+//                t2.setTextColor(R.color.white);
+                        male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mf));
+                        female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mf));
 
+                        t2.setTextColor(Color.parseColor("#c2c2a3"));
+                        t1.setTextColor(Color.parseColor("#c2c2a3"));
+
+                        gen="i";
+
+                    }
+                });
 
             }
         });
-//        deselect,margin top
+
+//  margin top
         seekbar.setMax(300);
         seekbar.setProgress(170);
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -99,9 +131,20 @@ public class MainActivity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "calculating", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this,MainActivity2.class);
-                startActivity(intent);
+                if (gen=="i"){
+                    Toast.makeText(MainActivity.this, "Please select gender", Toast.LENGTH_SHORT).show();
+                    MainActivity.weight=55;
+                    MainActivity.age=18;
+
+                    Intent intent=new Intent(MainActivity.this,MainActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "calculating", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                    startActivity(intent);
+
+                }
             }
         });
         ageinc.setOnClickListener(new View.OnClickListener() {
