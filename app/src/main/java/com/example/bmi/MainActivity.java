@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     public static int ch=170;
     public static int weight=55;
     public static int age=18;
+    int mi=0,fi=0;
     TextView weight1,age1;
     ImageView weightinc,weightdec,ageinc,agedec;
     @Override
@@ -53,28 +54,22 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View view) {
+                mi+=1;
+                if(mi%2==0){
+                    male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mf));
+                    female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mf));
+                    t1.setTextColor(Color.parseColor("#c2c2a3"));
+                    gen="i";
+                }
+                else {
 //                t2.setTextColor(R.color.white);
-                male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mfh));
-                female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.bg));
-                t1.setTextColor(Color.parseColor("#000000"));
-                t2.setTextColor(Color.parseColor("#c2c2a3"));
+                    male.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.mfh));
+                    female.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.bg));
+                    t1.setTextColor(Color.parseColor("#000000"));
+                    t2.setTextColor(Color.parseColor("#c2c2a3"));
 
-                gen="Male";
-                male.setOnClickListener(new View.OnClickListener() {
-                    @SuppressLint("ResourceAsColor")
-                    @Override
-                    public void onClick(View view) {
-//                t2.setTextColor(R.color.white);
-                        male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mf));
-                        female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mf));
-
-                        t2.setTextColor(Color.parseColor("#c2c2a3"));
-                        t1.setTextColor(Color.parseColor("#c2c2a3"));
-
-                        gen="i";
-
-                    }
-                });
+                    gen = "Male";
+                }
             }
         });
 
@@ -82,27 +77,22 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View view) {
+                fi+=1;
+                if(fi%2==0){
+                    male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mf));
+                    female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mf));
+                    t2.setTextColor(Color.parseColor("#c2c2a3"));
+                    gen="i";
+
+                }
 //                t1.setTextColor(R.color.white);
-                female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mfh));
-                male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.bg));
-                gen="Female";
-                t2.setTextColor(Color.parseColor("#000000"));
-                t1.setTextColor(Color.parseColor("#c2c2a3"));
-                female.setOnClickListener(new View.OnClickListener() {
-                    @SuppressLint("ResourceAsColor")
-                    @Override
-                    public void onClick(View view) {
-//                t2.setTextColor(R.color.white);
-                        male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mf));
-                        female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mf));
-
-                        t2.setTextColor(Color.parseColor("#c2c2a3"));
-                        t1.setTextColor(Color.parseColor("#c2c2a3"));
-
-                        gen="i";
-
-                    }
-                });
+                else {
+                    female.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.mfh));
+                    male.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.bg));
+                    gen = "Female";
+                    t2.setTextColor(Color.parseColor("#000000"));
+                    t1.setTextColor(Color.parseColor("#c2c2a3"));
+                }
 
             }
         });
@@ -128,13 +118,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (gen=="i"){
-                    Toast.makeText(MainActivity.this, "Please select gender", Toast.LENGTH_SHORT).show();
+                if (gen=="i" || (weight==0 || age==0) || ch==0){
+                    Toast.makeText(MainActivity.this, "Please select valid details", Toast.LENGTH_SHORT).show();
                     MainActivity.weight=55;
                     MainActivity.age=18;
+                    mi=0;
+                    fi=0;
 
                     Intent intent=new Intent(MainActivity.this,MainActivity.class);
                     startActivity(intent);
