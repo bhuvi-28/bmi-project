@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Bmi">
         <activity
             android:name=".MainActivity2"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".splash"
             android:label="bmi result"
             android:exported="false" />
         <activity
