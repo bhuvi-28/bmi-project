@@ -6,8 +6,12 @@
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/bmi/app/src/main/res/drawable/bg.xml" value="0.1635" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/bmi/app/src/main/res/drawable/button.xml" value="0.1175" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/bmi/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/dhanu/AndroidStudioProjects/bmi/app/src/main/res/drawable/icon.xml" value="0.1" />
         <entry key="..\:/Users/dhanu/AndroidStudioProjects/bmi/app/src/main/res/drawable/mf.xml" value="0.1175" />
-        <entry key="..\:/Users/dhanu/AndroidStudioProjects/bmi/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/dhanu/AndroidStudioProjects/bmi/app/src/main/res/drawable/splashbg.xml" value="0.1" />
+        <entry key="..\:/Users/dhanu/AndroidStudioProjects/bmi/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/dhanu/AndroidStudioProjects/bmi/app/src/main/res/layout/activity_main2.xml" value="0.22" />
+        <entry key="..\:/Users/dhanu/AndroidStudioProjects/bmi/app/src/main/res/layout/activity_splash.xml" value="0.22" />
       </map>
     </option>
   </component>
