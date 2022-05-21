@@ -18,14 +18,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon" />
+        app:srcCompat="@drawable/icon"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="215dp"
-        android:text="B.M.I"
+        android:fontFamily="@font/h1"
+        android:text="@string/b_m_i"
         android:textColor="#cccccc"
         android:textSize="35sp"
         android:textStyle="bold"

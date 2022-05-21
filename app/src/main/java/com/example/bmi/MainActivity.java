@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 t1.setTextColor(Color.parseColor("#000000"));
                 t2.setTextColor(Color.parseColor("#c2c2a3"));
 
-                gen="male";
+                gen="Male";
                 male.setOnClickListener(new View.OnClickListener() {
                     @SuppressLint("ResourceAsColor")
                     @Override
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 //                t1.setTextColor(R.color.white);
                 female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.mfh));
                 male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.bg));
-                gen="female";
+                gen="Female";
                 t2.setTextColor(Color.parseColor("#000000"));
                 t1.setTextColor(Color.parseColor("#c2c2a3"));
                 female.setOnClickListener(new View.OnClickListener() {
