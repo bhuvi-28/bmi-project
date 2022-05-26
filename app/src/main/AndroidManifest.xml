@@ -10,10 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bmi">
         <activity
+            android:name=".MainActivity3"
+            android:exported="false"
+            android:label="diet and workouts"
+            android:parentActivityName=".MainActivity2"/>
+        <activity
             android:name=".MainActivity2"
-            android:parentActivityName=".splash"
+            android:exported="false"
             android:label="bmi result"
-            android:exported="false" />
+            android:parentActivityName=".splash" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />

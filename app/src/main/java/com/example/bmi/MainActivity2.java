@@ -24,6 +24,7 @@ TextView bmiindex;
 TextView gender;
 TextView cat;
 ImageView img;
+Button act3;
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ ImageView img;
         gender=findViewById(R.id.gender);
         cat=findViewById(R.id.cat);
         img=findViewById(R.id.imageView5);
+        act3=findViewById(R.id.act3);
         double bmi= (double) wei/(((double) hei/100)*((double) hei/100));
         double d=Math.round(bmi*100)/100.0;
         bmiindex.setText(String.valueOf(d));
@@ -68,7 +70,14 @@ ImageView img;
                 cat.setTextColor(Color.parseColor("#cc0000"));
                 img.setImageResource(R.drawable.wrong);
             }
-
+        act3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity2.this, "loading your diet and workouts", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(MainActivity2.this,MainActivity3.class);
+                startActivity(intent);
+            }
+        });
 
 
 
