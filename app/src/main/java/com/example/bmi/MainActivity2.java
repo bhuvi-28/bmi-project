@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
 public static String category;
+
 Button b1;
 Button b;
 int hei=MainActivity.ch;
